@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC2519B722E065C1002EE011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2519B622E065C1002EE011 /* AppDelegate.swift */; };
+		AC2519B922E065C1002EE011 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2519B822E065C1002EE011 /* ViewController.swift */; };
+		AC2519BB22E065C4002EE011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2519BA22E065C4002EE011 /* Assets.xcassets */; };
+		AC2519BE22E065C4002EE011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2519BC22E065C4002EE011 /* Main.storyboard */; };
+		AC2519CA22E065C4002EE011 /* XMPHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2519C922E065C4002EE011 /* XMPHandlerTests.swift */; };
+		AC2519D522E065C4002EE011 /* XMPHandlerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2519D422E065C4002EE011 /* XMPHandlerUITests.swift */; };
+		AC2519E322E065D5002EE011 /* XMPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2519E222E065D5002EE011 /* XMPHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC2519C622E065C4002EE011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC2519AB22E065C1002EE011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC2519B222E065C1002EE011;
+			remoteInfo = XMPHandler;
+		};
+		AC2519D122E065C4002EE011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC2519AB22E065C1002EE011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC2519B222E065C1002EE011;
+			remoteInfo = XMPHandler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC2519B322E065C1002EE011 /* XMPHandler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMPHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC2519B622E065C1002EE011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC2519B822E065C1002EE011 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC2519BA22E065C4002EE011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC2519BD22E065C4002EE011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC2519BF22E065C4002EE011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC2519C022E065C4002EE011 /* XMPHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMPHandler.entitlements; sourceTree = "<group>"; };
+		AC2519C522E065C4002EE011 /* XMPHandlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMPHandlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC2519C922E065C4002EE011 /* XMPHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMPHandlerTests.swift; sourceTree = "<group>"; };
+		AC2519CB22E065C4002EE011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC2519D022E065C4002EE011 /* XMPHandlerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMPHandlerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC2519D422E065C4002EE011 /* XMPHandlerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMPHandlerUITests.swift; sourceTree = "<group>"; };
+		AC2519D622E065C4002EE011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC2519E222E065D5002EE011 /* XMPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMPHandler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC2519B022E065C1002EE011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC2519C222E065C4002EE011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC2519CD22E065C4002EE011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC2519AA22E065C1002EE011 = {
+			isa = PBXGroup;
+			children = (
+				AC2519B522E065C1002EE011 /* XMPHandler */,
+				AC2519C822E065C4002EE011 /* XMPHandlerTests */,
+				AC2519D322E065C4002EE011 /* XMPHandlerUITests */,
+				AC2519B422E065C1002EE011 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC2519B422E065C1002EE011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC2519B322E065C1002EE011 /* XMPHandler.app */,
+				AC2519C522E065C4002EE011 /* XMPHandlerTests.xctest */,
+				AC2519D022E065C4002EE011 /* XMPHandlerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC2519B522E065C1002EE011 /* XMPHandler */ = {
+			isa = PBXGroup;
+			children = (
+				AC2519B622E065C1002EE011 /* AppDelegate.swift */,
+				AC2519B822E065C1002EE011 /* ViewController.swift */,
+				AC2519E222E065D5002EE011 /* XMPHandler.swift */,
+				AC2519BA22E065C4002EE011 /* Assets.xcassets */,
+				AC2519BC22E065C4002EE011 /* Main.storyboard */,
+				AC2519BF22E065C4002EE011 /* Info.plist */,
+				AC2519C022E065C4002EE011 /* XMPHandler.entitlements */,
+			);
+			path = XMPHandler;
+			sourceTree = "<group>";
+		};
+		AC2519C822E065C4002EE011 /* XMPHandlerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC2519C922E065C4002EE011 /* XMPHandlerTests.swift */,
+				AC2519CB22E065C4002EE011 /* Info.plist */,
+			);
+			path = XMPHandlerTests;
+			sourceTree = "<group>";
+		};
+		AC2519D322E065C4002EE011 /* XMPHandlerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC2519D422E065C4002EE011 /* XMPHandlerUITests.swift */,
+				AC2519D622E065C4002EE011 /* Info.plist */,
+			);
+			path = XMPHandlerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC2519B222E065C1002EE011 /* XMPHandler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC2519D922E065C4002EE011 /* Build configuration list for PBXNativeTarget "XMPHandler" */;
+			buildPhases = (
+				AC2519AF22E065C1002EE011 /* Sources */,
+				AC2519B022E065C1002EE011 /* Frameworks */,
+				AC2519B122E065C1002EE011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XMPHandler;
+			productName = XMPHandler;
+			productReference = AC2519B322E065C1002EE011 /* XMPHandler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC2519C422E065C4002EE011 /* XMPHandlerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC2519DC22E065C4002EE011 /* Build configuration list for PBXNativeTarget "XMPHandlerTests" */;
+			buildPhases = (
+				AC2519C122E065C4002EE011 /* Sources */,
+				AC2519C222E065C4002EE011 /* Frameworks */,
+				AC2519C322E065C4002EE011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC2519C722E065C4002EE011 /* PBXTargetDependency */,
+			);
+			name = XMPHandlerTests;
+			productName = XMPHandlerTests;
+			productReference = AC2519C522E065C4002EE011 /* XMPHandlerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC2519CF22E065C4002EE011 /* XMPHandlerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC2519DF22E065C4002EE011 /* Build configuration list for PBXNativeTarget "XMPHandlerUITests" */;
+			buildPhases = (
+				AC2519CC22E065C4002EE011 /* Sources */,
+				AC2519CD22E065C4002EE011 /* Frameworks */,
+				AC2519CE22E065C4002EE011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC2519D222E065C4002EE011 /* PBXTargetDependency */,
+			);
+			name = XMPHandlerUITests;
+			productName = XMPHandlerUITests;
+			productReference = AC2519D022E065C4002EE011 /* XMPHandlerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC2519AB22E065C1002EE011 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Frank van Boheemen";
+				TargetAttributes = {
+					AC2519B222E065C1002EE011 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					AC2519C422E065C4002EE011 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = AC2519B222E065C1002EE011;
+					};
+					AC2519CF22E065C4002EE011 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = AC2519B222E065C1002EE011;
+					};
+				};
+			};
+			buildConfigurationList = AC2519AE22E065C1002EE011 /* Build configuration list for PBXProject "XMPHandler" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC2519AA22E065C1002EE011;
+			productRefGroup = AC2519B422E065C1002EE011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC2519B222E065C1002EE011 /* XMPHandler */,
+				AC2519C422E065C4002EE011 /* XMPHandlerTests */,
+				AC2519CF22E065C4002EE011 /* XMPHandlerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC2519B122E065C1002EE011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC2519BB22E065C4002EE011 /* Assets.xcassets in Resources */,
+				AC2519BE22E065C4002EE011 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC2519C322E065C4002EE011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC2519CE22E065C4002EE011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC2519AF22E065C1002EE011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC2519B922E065C1002EE011 /* ViewController.swift in Sources */,
+				AC2519B722E065C1002EE011 /* AppDelegate.swift in Sources */,
+				AC2519E322E065D5002EE011 /* XMPHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC2519C122E065C4002EE011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC2519CA22E065C4002EE011 /* XMPHandlerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC2519CC22E065C4002EE011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC2519D522E065C4002EE011 /* XMPHandlerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC2519C722E065C4002EE011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC2519B222E065C1002EE011 /* XMPHandler */;
+			targetProxy = AC2519C622E065C4002EE011 /* PBXContainerItemProxy */;
+		};
+		AC2519D222E065C4002EE011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC2519B222E065C1002EE011 /* XMPHandler */;
+			targetProxy = AC2519D122E065C4002EE011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC2519BC22E065C4002EE011 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC2519BD22E065C4002EE011 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC2519D722E065C4002EE011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC2519D822E065C4002EE011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AC2519DA22E065C4002EE011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XMPHandler/XMPHandler.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XMPHandler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.XMPHandler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AC2519DB22E065C4002EE011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XMPHandler/XMPHandler.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XMPHandler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.XMPHandler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AC2519DD22E065C4002EE011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XMPHandlerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.XMPHandlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XMPHandler.app/Contents/MacOS/XMPHandler";
+			};
+			name = Debug;
+		};
+		AC2519DE22E065C4002EE011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XMPHandlerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.XMPHandlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XMPHandler.app/Contents/MacOS/XMPHandler";
+			};
+			name = Release;
+		};
+		AC2519E022E065C4002EE011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XMPHandlerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.XMPHandlerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = XMPHandler;
+			};
+			name = Debug;
+		};
+		AC2519E122E065C4002EE011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XMPHandlerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.XMPHandlerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = XMPHandler;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC2519AE22E065C1002EE011 /* Build configuration list for PBXProject "XMPHandler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC2519D722E065C4002EE011 /* Debug */,
+				AC2519D822E065C4002EE011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC2519D922E065C4002EE011 /* Build configuration list for PBXNativeTarget "XMPHandler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC2519DA22E065C4002EE011 /* Debug */,
+				AC2519DB22E065C4002EE011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC2519DC22E065C4002EE011 /* Build configuration list for PBXNativeTarget "XMPHandlerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC2519DD22E065C4002EE011 /* Debug */,
+				AC2519DE22E065C4002EE011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC2519DF22E065C4002EE011 /* Build configuration list for PBXNativeTarget "XMPHandlerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC2519E022E065C4002EE011 /* Debug */,
+				AC2519E122E065C4002EE011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC2519AB22E065C1002EE011 /* Project object */;
+}
