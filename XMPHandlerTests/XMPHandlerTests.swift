@@ -17,31 +17,16 @@ class XMPHandlerTests: XCTestCase {
         }
     }
     private let xmpHandler = XMPHandler()
-    
-//    override func setUp() {
-//        // Put setup code here. This method is called before the invocation of each test method in the class.
-//    }
-//
-//    override func tearDown() {
-//        // Put teardown code here. This method is called after the invocation of each test method in the class.
-//    }
 
     func testTestFileDirFound () {
         XCTAssert(FileManager.default.fileExists(atPath: testFileDir.path))
     }
     
     func testParseXMP() {
-        let validXMPFileURL = testFileDir.appendingPathComponent("valid-xmp.xmp")
+        let validXMPFileURL = testFileDir.appendingPathComponent("valid.xmp")
         XCTAssert(FileManager.default.fileExists(atPath:validXMPFileURL.path))
         
-        do {
-            let result = try xmpHandler.parseXMP(from: validXMPFileURL)
-            XCTAssert(result.attributes != nil)
-            XCTAssert(result.dcObjects != nil)
-        } catch let error {
-            print(error)
-        }
-
+        XCTAssertNoThrow(try? xmpHandler.parseXMP(from: validXMPFileURL))
     }
     
     func testThrowErrorWhenFileIsNotFound() {
@@ -57,22 +42,71 @@ class XMPHandlerTests: XCTestCase {
     }
     
     func testThrowErrorWhenParsingInvalidXMP() {
+        let invalidXMPURL = testFileDir.appendingPathComponent("html-in-xmp-file.xmp")
+        XCTAssert(FileManager.default.fileExists(atPath:invalidXMPURL.path))
+        
+        do {
+            let _ = try xmpHandler.parseXMP(from: invalidXMPURL)
+        } catch let error {
+            print(error)
+            XCTAssert(true)
+        }
         
     }
 
     func testSaveXMPInNewFile() {
+        //This test will fail when the app is in Sandbox-mode
+        
+        let newXMPURL = testFileDir.appendingPathComponent("new.xmp")
+        
+        if FileManager.default.fileExists(atPath: newXMPURL.path) {
+            try? FileManager.default.removeItem(at: newXMPURL)
+        }
+        
+        XCTAssert(!FileManager.default.fileExists(atPath: newXMPURL.path))
+        
+        let attributes = ["xmp:Rating" : "2"]
+        
+        xmpHandler.saveXMP(attributes: attributes, objects: [:], to: newXMPURL)
+        
+        XCTAssert(FileManager.default.fileExists(atPath: newXMPURL.path))
         
     }
     
     func testUpdateXMPInFile() {
+        //This test will fail when the app is in Sandbox-mode
+        let xmpURL = testFileDir.appendingPathComponent("to-update.xmp")
+
+        let newAttributes = ["xmp:Rating" : "5"]
         
+        guard let result = try? xmpHandler.parseXMP(from: xmpURL),
+            let rating = result.attributes?["xmp:Rating"] else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssert(rating != newAttributes["xmp:Rating"])
+        
+        xmpHandler.saveXMP(attributes: newAttributes, objects: [:], to: xmpURL)
+        
+        guard let newResult = try? xmpHandler.parseXMP(from: xmpURL),
+            let newRating = newResult.attributes?["xmp:Rating"] else {
+                XCTFail()
+                return
+        }
+        
+        XCTAssert(newRating == newAttributes["xmp:Rating"])
+
+        //Reset file
+        let oldAttributes = ["xmp:Rating" : rating]
+        xmpHandler.saveXMP(attributes: oldAttributes, objects: [:], to: xmpURL)
     }
     
-//    func testPerformanceExample() {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
-
+    /*TODO: Test performance with large XMP-files (if that's even a thing)
+        func testPerformance() {
+            self.measure {
+                // Put the code you want to measure the time of here.
+            }
+        }
+    */
 }
