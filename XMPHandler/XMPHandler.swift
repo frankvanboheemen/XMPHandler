@@ -19,7 +19,7 @@ class XMPHandler: NSObject, XMLParserDelegate {
     
     private let desiredDCObjectKeys = ["dc:title", "dc:description", "dc:rights"]
     
-    func parseXMP(from file: URL) throws -> (attributes: [String : String]?, dcObjects: [String : String]?) {
+    func parseXMP(from file: URL) throws -> ([String : String]?) {
         let parser = XMLParser(contentsOf: file)
         parser?.delegate = self
         parser?.parse()
@@ -33,62 +33,57 @@ class XMPHandler: NSObject, XMLParserDelegate {
                 throw XMPHandlerError.invalidXMP(url: file, message: "Content of '\(file.path)' does not conform compatible XMP-format.")
         }
         
-        let foundAttributes = description.attributes
+        var foundValues = description.attributes
         
-        var foundObjects : [String : String] = [:]
         for key in desiredDCObjectKeys {
             if let string = description[key]?.first?["rdf:Alt"]?.first?["rdf:li"]?.first?.text {
-                foundObjects[key] = string
+                foundValues[key] = string
             }
         }
         
-        return (attributes: foundAttributes, dcObjects: foundObjects)
+        return foundValues
     }
     
-    func saveXMP(attributes : [String: String], objects: [String: String], to location: URL) {
-        let xmp : XMLElement?
+    func saveXMP(xmpItems: [String: String], to location: URL) {
+        var updatedXMPItems : [String : String]
         
-        if FileManager.default.fileExists(atPath: location.path) {
-            let result = try? parseXMP(from: location)
+        if FileManager.default.fileExists(atPath: location.path),
+            let result = try? parseXMP(from: location) {
+            updatedXMPItems = result
             
-            var updatedAttributes : [String: String] = [:]
-            
-            if let foundAttributes = result?.attributes {
-                updatedAttributes = foundAttributes
+            for item in xmpItems {
+                updatedXMPItems[item.key] = item.value
             }
-            
-            for attribute in attributes {
-                updatedAttributes[attribute.key] = attribute.value
-            }
-            
-            var updatedObjects : [String : String] = [:]
-            
-            if let found = result?.dcObjects {
-                updatedObjects = found
-            }
-            
-            for object in objects {
-                updatedObjects[object.key] = object.value
-            }
-            
-            try? FileManager.default.removeItem(at: location)
-            
-            updateParsedXMP(with: updatedAttributes, and: updatedObjects)
-            if let parsedXMP = parsedXMP {
-                xmp = transform(parsedXMP: parsedXMP)
-            } else {
-                xmp = nil
-            }
-            
         } else {
-            xmp = createNewXMP(attributes: attributes, dcObjects: objects)
+            updatedXMPItems = xmpItems
         }
         
-        if let xmp  = xmp {
-            let xml = XMLDocument(rootElement: xmp)
-            let xmlData = xml.xmlData(options: [.nodePrettyPrint])
-            try? xmlData.write(to: URL(fileURLWithPath: location.path))
+        //Split all the values up into either attributes for the description-element or dcObjects, which should be saved differntly in the XML
+        var attributes = [String: String]()
+        var dcObjects = [String: String]()
+        
+        for item in updatedXMPItems {
+            if item.key.prefix(upTo: item.key.index(item.key.startIndex, offsetBy: 2)) == "dc" {
+                dcObjects[item.key] = item.value
+            } else {
+                attributes[item.key] = item.value
+            }
         }
+        
+        let xmp : XMLElement
+        
+        if parsedXMP != nil {
+            //Because the XMP could contain elements we are not explicitly looking for, updating xmp items needs to be done a bit more careful.
+            updateParsedXMP(with: attributes, and: dcObjects)
+            xmp = transform(parsedXMP: parsedXMP!)
+        } else {
+            xmp = createNewXMP(attributes: attributes, dcObjects: dcObjects)
+        }
+        
+        let xml = XMLDocument(rootElement: xmp)
+        let xmlData = xml.xmlData(options: [.nodePrettyPrint])
+        try? xmlData.write(to: URL(fileURLWithPath: location.path))
+        
     }
     
     //MARK: - Private methods
@@ -129,16 +124,16 @@ class XMPHandler: NSObject, XMLParserDelegate {
             let element = transform(parsedXMP: child)
             childElements.append(element)
         }
-        
+
         let element = createXMLElement(name: parsedXMP.name,
                                        attributes: parsedXMP.attributes,
                                        options: nil,
                                        text: parsedXMP.text)
-        
+
         for child in childElements {
             element.addChild(child)
         }
-        
+
         return element
     }
     

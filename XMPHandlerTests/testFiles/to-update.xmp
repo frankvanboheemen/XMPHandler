@@ -1,22 +1,12 @@
 
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 5.6.0">
     <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-        <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmp:Rating="2" pictureflow:picturestate="unsorted" xmlns:pictureflow="https://ns.pictureflow.app/1.0/">
-            <dc:description>
-                <rdf:Alt>
-                    <rdf:li xml:lang="x-default"></rdf:li>
-                </rdf:Alt>
-            </dc:description>
+        <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmp:Rating="2" xmlns:pictureflow="https://ns.pictureflow.app/1.0/" pictureflow:picturestate="unsorted">
             <dc:title>
                 <rdf:Alt>
                     <rdf:li xml:lang="x-default">Hong Kong harbor view</rdf:li>
                 </rdf:Alt>
             </dc:title>
-            <dc:rights>
-                <rdf:Alt>
-                    <rdf:li xml:lang="x-default"></rdf:li>
-                </rdf:Alt>
-            </dc:rights>
         </rdf:Description>
     </rdf:RDF>
 </x:xmpmeta>

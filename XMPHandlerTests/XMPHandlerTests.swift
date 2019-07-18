@@ -10,12 +10,12 @@ import XCTest
 @testable import XMPHandler
 
 class XMPHandlerTests: XCTestCase {
-    
     private var testFileDir : URL {
         get {
             return URL(fileURLWithPath: #file).deletingLastPathComponent().appendingPathComponent("testFiles")
         }
     }
+    
     private let xmpHandler = XMPHandler()
 
     func testTestFileDirFound () {
@@ -65,9 +65,9 @@ class XMPHandlerTests: XCTestCase {
         
         XCTAssert(!FileManager.default.fileExists(atPath: newXMPURL.path))
         
-        let attributes = ["xmp:Rating" : "2"]
+        let values = ["xmp:Rating" : "2", "dc:rights" : "rights"]
         
-        xmpHandler.saveXMP(attributes: attributes, objects: [:], to: newXMPURL)
+        xmpHandler.saveXMP(xmpItems: values, to: newXMPURL)
         
         XCTAssert(FileManager.default.fileExists(atPath: newXMPURL.path))
         
@@ -80,17 +80,17 @@ class XMPHandlerTests: XCTestCase {
         let newAttributes = ["xmp:Rating" : "5"]
         
         guard let result = try? xmpHandler.parseXMP(from: xmpURL),
-            let rating = result.attributes?["xmp:Rating"] else {
+            let rating = result["xmp:Rating"] else {
             XCTFail()
             return
         }
         
         XCTAssert(rating != newAttributes["xmp:Rating"])
         
-        xmpHandler.saveXMP(attributes: newAttributes, objects: [:], to: xmpURL)
+        xmpHandler.saveXMP(xmpItems: newAttributes, to: xmpURL)
         
         guard let newResult = try? xmpHandler.parseXMP(from: xmpURL),
-            let newRating = newResult.attributes?["xmp:Rating"] else {
+            let newRating = newResult["xmp:Rating"] else {
                 XCTFail()
                 return
         }
@@ -98,8 +98,8 @@ class XMPHandlerTests: XCTestCase {
         XCTAssert(newRating == newAttributes["xmp:Rating"])
 
         //Reset file
-        let oldAttributes = ["xmp:Rating" : rating]
-        xmpHandler.saveXMP(attributes: oldAttributes, objects: [:], to: xmpURL)
+        let oldValues = ["xmp:Rating" : rating]
+        xmpHandler.saveXMP(xmpItems: oldValues, to: xmpURL)
     }
     
     /*TODO: Test performance with large XMP-files (if that's even a thing)
