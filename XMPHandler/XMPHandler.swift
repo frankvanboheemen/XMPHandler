@@ -29,14 +29,14 @@ class XMPHandler: NSObject, XMLParserDelegate {
         }
         
         guard parsedXMP.name == "x:xmpmeta",
-            let description = parsedXMP["rdf:RDF"]?.first?["rdf:Description"]?.first else {
+            let description = parsedXMP["rdf:RDF"]?["rdf:Description"] else {
                 throw XMPHandlerError.invalidXMP(url: file, message: "Content of '\(file.path)' does not conform compatible XMP-format.")
         }
         
         var foundValues = description.attributes
         
         for key in desiredDCObjectKeys {
-            if let string = description[key]?.first?["rdf:Alt"]?.first?["rdf:li"]?.first?.text {
+            if let string = description[key]?["rdf:Alt"]?["rdf:li"]?.text {
                 foundValues[key] = string
             }
         }
@@ -90,11 +90,11 @@ class XMPHandler: NSObject, XMLParserDelegate {
     
     private func updateParsedXMP(with updatedAttributes : [String: String], and updatedObjects: [String: String]) {
         if let parsedXMP = parsedXMP,
-            let description = parsedXMP["rdf:RDF"]?.first?["rdf:Description"]?.first {
+            let description = parsedXMP["rdf:RDF"]?["rdf:Description"] {
             description.attributes = updatedAttributes
             
             for object in updatedObjects {
-                if let xmpObject = description[object.key]?.first?["rdf:Alt"]?.first?["rdf:li"]?.first {
+                if let xmpObject = description[object.key]?["rdf:Alt"]?["rdf:li"] {
                     xmpObject.text = object.value
                 } else {
                     description.childElements.append(createParsedXMPElement(for: object))
@@ -248,13 +248,13 @@ class ParsedXMPElement {
         self.name = name
     }
     
-    subscript(key: String) -> [ParsedXMPElement]? {
+    subscript(key: String) -> ParsedXMPElement? {
         get {
             let filterdElements = childElements.filter { $0.name == key }
-            if filterdElements.isEmpty {
-                return nil
+            if let first = filterdElements.first {
+                return first
             } else {
-                return filterdElements
+                return nil
             }
         }
     }
