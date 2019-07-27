@@ -6,4 +6,3 @@ This wrapper allows you to read, write and update xmp-items stored as attributes
 This class is part of [Pictureflow](https://pictureflow.app).
 
 **important note**: To make the tests succeed, your app should not be sandboxed.
----
