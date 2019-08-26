@@ -106,13 +106,13 @@ class XMPHandler: NSObject, XMLParserDelegate {
     private func createParsedXMPElement(for dcObject: (key: String, value: String)) -> ParsedXMPElement {
         /// Creates Parsed XMP element for a
         let liElement = ParsedXMPElement(name: "rdf:li")
-        liElement.text = dcObject.key
+        liElement.text = dcObject.value
         liElement.attributes = ["xml:lang" : "x-default"]
         
         let altElement = ParsedXMPElement(name: "rdf:Alt")
         altElement.childElements.append(liElement)
         
-        let dcElement = ParsedXMPElement(name: dcObject.value)
+        let dcElement = ParsedXMPElement(name: dcObject.key)
         dcElement.childElements.append(altElement)
         
         return dcElement
